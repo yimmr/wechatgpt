@@ -1,0 +1,25 @@
+version: "3.4"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+      - ./log:/var/log
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+    ports:
+      - ${PORT}:${PORT}
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - dbdata:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - 27017:27017
+volumes:
+  dbdata: null
