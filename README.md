@@ -1,3 +1,5 @@
+使用 NodeJS + mongodb + Docker 搭建的微信公众号 **ChatGPT** 聊天服务
+
 # 用户
 
 1. 设置用户每天消耗的令牌数
